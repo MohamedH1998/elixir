@@ -1,5 +1,5 @@
-import "./NewProductCard.css";
-import NewProductCard from "./NewProductCard";
+import "../NewProductCard/NewProductCard.css";
+import NewProductCard from "../NewProductCard/NewProductCard";
 
 const NewProductCards = ({ scrollToTop }) => {
   return (

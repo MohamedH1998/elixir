@@ -2,7 +2,8 @@ import React from "react";
 import "./ProductIcon.css";
 import Rating from "@material-ui/lab/Rating";
 import { Link } from "react-router-dom";
-import RenderSmoothImage from "./RenderSmoothImage";
+import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
+
 
 const ProductIcon = ({ id, src, alt, tagline, name, price, scrollToTop }) => {
   return (

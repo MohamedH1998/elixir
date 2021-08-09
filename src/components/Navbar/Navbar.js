@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -13,6 +13,10 @@ const Navbar = ({ scrollToTop }) => {
     setClick(!click);
     scrollToTop();
   };
+
+  useEffect(()=> {
+    click ? document.body.style.overflow = 'hidden' :  document.body.style.overflow = 'unset';
+  }, [click])
 
   return (
     <div className="navbar">

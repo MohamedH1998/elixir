@@ -1,14 +1,14 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
-import NewProductCards from "./components/NewProductCards";
+import NewProductCards from "./components/NewProductCards/NewProductCards";
 import Footer from "./components/Footer/Footer";
-import ProductIcons from "./components/ProductIcons";
+import ProductIcons from "./components/ProductIcons/ProductIcons";
 import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 
-import Product from "./components/Product";
+import Product from "./components/Product/Product";
 function App() {
   const scrollToTop = () => window.scrollTo(0, 0);
   return (

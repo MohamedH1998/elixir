@@ -1,5 +1,5 @@
 import React from "react";
-import RenderSmoothImage from "./RenderSmoothImage";
+import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
 import { Link } from "react-router-dom";
 
 const NewProductCard = ({ alt, src, tagline, scrollToTop }) => {

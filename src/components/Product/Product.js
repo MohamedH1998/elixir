@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import data from "../data/data";
-import RenderSmoothImage from "./RenderSmoothImage";
+import data from "../../data/data";
+import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
 import { TiTick } from "react-icons/ti";
 import { useParams } from "react-router-dom";
 import "./Product.css";
-import ProductIcon from "./ProductIcon";
+import ProductIcon from "../ProductIcon/ProductIcon";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);

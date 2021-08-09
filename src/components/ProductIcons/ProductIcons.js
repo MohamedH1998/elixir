@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ProductIcon from "./ProductIcon";
-import RenderSmoothImage from "./RenderSmoothImage";
+import ProductIcon from "../ProductIcon/ProductIcon";
+import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
 import "./ProductIcons.css";
-import data from "../data/data";
-import Search from "./Search";
+import data from '../../data/data'
+import Search from "../Search/Search";
 
 const ProductIcons = ({ scrollToTop }) => {
   const [filter, setFilter] = useState("");

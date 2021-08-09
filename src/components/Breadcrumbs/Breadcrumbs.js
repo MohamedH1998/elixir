@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './Breadcrumbs.css'
-import Search from './Search'
-import data from '../data/data'
+import data from '../../data/data'
 const Breadcrumbs = () => {
   const params = useParams();
     const i = params.id
