@@ -1,0 +1,18 @@
+.product-icon {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* min-height: 100vh; */
+}
+
+.no-products-found-header {
+  padding: 5%;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}

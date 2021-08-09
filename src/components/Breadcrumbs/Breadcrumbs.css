@@ -1,0 +1,28 @@
+.breadcrumbs-container {
+  margin-top: 1%;
+}
+
+.breakcrumb-list {
+  display: flex;
+  margin-left: 5%;
+}
+
+.breadcrumb-items {
+  list-style: none;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-small);
+}
+.breadcrumb-items + .breadcrumb-items::before {
+  content: "/";
+  display: inline-block;
+  color: var(--clr-dark);
+  padding: 0 0.5rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.breadcrumb-items {
+  margin: 20px 0px;
+}
