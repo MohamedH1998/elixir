@@ -1,0 +1,19 @@
+.cart-container  {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 20px 0px;
+    min-height: 50vh;
+}
+
+.checkout-btn {
+    background-color: var(--clr-accent);
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: var(--clr-dark);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h4);
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}

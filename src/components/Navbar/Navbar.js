@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
 import "./Navbar.css";
 
-const Navbar = ({ scrollToTop }) => {
+const Navbar = ({ scrollToTop, quantityInBasket }) => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => {
@@ -28,6 +28,7 @@ const Navbar = ({ scrollToTop }) => {
           {click ? <FaTimes /> : <FaBars />}
         </span>
       </div>
+      <div className="nav-items-container">
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">
           <Link to="/" onClick={handleClick} className="nav-links">
@@ -46,12 +47,13 @@ const Navbar = ({ scrollToTop }) => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/" onClick={handleClick} className="nav-links">
+          <Link to="/cart" onClick={handleClick} className="nav-links">
             <AiOutlineShoppingCart className="nav-icon" />
-            Cart (0)
+            Cart ( {quantityInBasket} )
           </Link>
         </li>
       </ul>
+      </div>
     </div>
   );
 };

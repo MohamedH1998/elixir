@@ -11,7 +11,7 @@ const ProductIcon = ({ id, src, alt, tagline, name, price, scrollToTop }) => {
       <RenderSmoothImage src={src} alt={alt} />
       <p className="product-details name">{name}</p>
       <p className="product-details tagline">{tagline}</p>
-      <Rating name="read-only" value="4" readOnly />
+      <Rating name="read-only" value={4} readOnly />
       <p className="product-details price">{price}</p>
     </Link>
   );

@@ -6,18 +6,30 @@ import { useParams } from "react-router-dom";
 import "./Product.css";
 import ProductIcon from "../ProductIcon/ProductIcon";
 
-const Product = () => {
-  const [quantity, setQuantity] = useState(1);
+const Product = ({quantityInBasket, setQuantityInBasket, subTotal, setSubTotal}) => {
+  const [quantity, setQuantity] = useState(0);
   const [buttonToggle, setButtonToggle] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
   const params = useParams();
   const i = params.id;
 
   const handleIncrease = () => {
-    setQuantity(quantity + 1);
-  };
+    if (quantity <= 10) {
+     setQuantity(quantity + 1)
+     setQuantityInBasket(quantityInBasket + 1)
+     setSubTotal(subTotal + data[i].price)
 
-  const handleDecrease = () => quantity >= 2 && setQuantity(quantity - 1);
+  }
+}
+
+
+  const handleDecrease = () => {
+    if (quantity >= 1) {
+      setQuantity(quantity - 1)
+      setQuantityInBasket(quantityInBasket - 1)
+      setSubTotal(subTotal - data[i].price)
+    }
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -112,8 +124,8 @@ const Product = () => {
                       className="product-quantity"
                       id="product-quantity"
                       type="number"
-                      min="1"
-                      placeholder="1"
+                      min="0"
+                      placeholder="0"
                       value={quantity}
                       onChange={(e) => setQuantity(e.target.value)}
                     />

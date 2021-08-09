@@ -19,6 +19,7 @@
   --clr-light: #fff;
   --clr-bg: #eee;
   --clr-accent: #f1c755;
+  --clr-accent2: #a8f155;
 
   --fs-h1: 2.3rem;
   --fs-h2: 1.9rem;
@@ -32,6 +33,8 @@
 body {
   background: var(--clr-bg);
   background-image: url("https://www.transparenttextures.com/patterns/nice-snow.png");
+  width: 100vw;
+  /* overflow-x: hidden; */
 }
 
 main {
