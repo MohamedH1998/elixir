@@ -1,39 +1,48 @@
-import React, { useState } from "react";
-import data from "../../data/data";
-import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
+import React, { useState, useEffect } from "react";
 import { TiTick } from "react-icons/ti";
 import { useParams } from "react-router-dom";
+import {connect} from 'react-redux'
+
+
+
+import data from '../../data/data'
+// import data from "../../data/data";
+
 import "./Product.css";
 import ProductIcon from "../ProductIcon/ProductIcon";
 
-const Product = ({quantityInBasket, setQuantityInBasket, subTotal, setSubTotal}) => {
+const Product = ({selectItem, quantityInBasket, setQuantityInBasket}) => {
+
   const [quantity, setQuantity] = useState(0);
-  const [buttonToggle, setButtonToggle] = useState(true);
+
   const [imageLoaded, setImageLoaded] = useState(false);
   const params = useParams();
   const i = params.id;
 
+
+
   const handleIncrease = () => {
     if (quantity <= 10) {
-     setQuantity(quantity + 1)
-     setQuantityInBasket(quantityInBasket + 1)
-     setSubTotal(subTotal + data[i].price)
-
+      setQuantity(quantity + 1)
+    }
   }
-}
-
-
   const handleDecrease = () => {
     if (quantity >= 1) {
       setQuantity(quantity - 1)
-      setQuantityInBasket(quantityInBasket - 1)
-      setSubTotal(subTotal - data[i].price)
     }
   }
 
+
   const onSubmit = (e) => {
-    e.preventDefault();
-    setButtonToggle(!buttonToggle);
+    e.preventDefault()
+    if (quantity !== 0) {
+        const vibe = selectItem(data[i].id, quantity)
+        setQuantityInBasket(vibe.payload.amount)
+        console.log(quantityInBasket)
+
+   }
+    setQuantity(0)
+
   };
 
   const scrollToTop = () => window.scrollTo(0, 0);
@@ -41,6 +50,7 @@ const Product = ({quantityInBasket, setQuantityInBasket, subTotal, setSubTotal})
   return (
     <div className="product-page-container">
       <div className="product">
+
         <div className="product-imgs">
           <div className="holder">
             <div className="preview-imgs">
@@ -129,8 +139,7 @@ const Product = ({quantityInBasket, setQuantityInBasket, subTotal, setSubTotal})
                       value={quantity}
                       onChange={(e) => setQuantity(e.target.value)}
                     />
-                    <button
-                      type="button"
+                    <button type="button"
                       className="product-quantity-buttons"
                       onClick={handleIncrease}
                     >
@@ -139,14 +148,9 @@ const Product = ({quantityInBasket, setQuantityInBasket, subTotal, setSubTotal})
                   </div>
                 </div>
                 <hr className="product-hr"></hr>
-                <button
-                  className={
-                    buttonToggle ? "add-to-basket" : "cant-purchase-button"
-                  }
-                >
-                  {buttonToggle
-                    ? "Add to your basket"
-                    : "You can't really buy this, come on!👨🏽‍🎨"}
+                <button type="submit"
+                  className= "add-to-basket"
+                >Add to your basket
                 </button>
               </div>
             </form>
@@ -190,4 +194,4 @@ const Product = ({quantityInBasket, setQuantityInBasket, subTotal, setSubTotal})
   );
 };
 
-export default Product;
+export default Product

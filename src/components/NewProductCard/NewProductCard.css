@@ -3,9 +3,13 @@
 }
 .new-range {
   text-align: center;
-  font-weight: var(--fw-bold);
 }
 
+.new-range-subtitle {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-p);
+  padding: 2% 0%;
+}
 .new-product-cards {
   margin-top: 2%;
   width: 100%;

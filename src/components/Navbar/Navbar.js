@@ -21,7 +21,7 @@ const Navbar = ({ scrollToTop, quantityInBasket }) => {
   return (
     <div className="navbar">
       <div className="navbar-container">
-        <Link to="/" onClick={scrollToTop} className="navbar-logo">
+        <Link to="/" onClick={() => scrollToTop()} className="navbar-logo">
           elixir
         </Link>
         <span onClick={() => setClick(!click)} className="menu-icon">

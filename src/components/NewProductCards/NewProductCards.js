@@ -1,30 +1,32 @@
 import "../NewProductCard/NewProductCard.css";
-import NewProductCard from "../NewProductCard/NewProductCard";
-
+import ProductIcon from "../ProductIcon/ProductIcon";
+import data from '../../data/data'
 const NewProductCards = ({ scrollToTop }) => {
+
+  const products = data.map((product, i) => {
+    return (
+      <ProductIcon
+      scrollToTop={scrollToTop}
+      id={product.id}
+      key={i}
+      src={product.images[0].url}
+      description={product.description}
+      alt={product.name}
+      name={product.name}
+      tagline={product.tagline}
+      price={`£${product.price}`}
+    />
+    )
+  })
+
   return (
     <div className="new-product-container">
-      <h1 className="new-range">Our New Range</h1>
-      <div className="new-product-cards">
-        <NewProductCard
-          scrollToTop={scrollToTop}
-          alt="product image"
-          src="https://images.unsplash.com/photo-1543364038-28b7a0578c18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80"
-          tagline="100% Organic"
-        />
-        <NewProductCard
-          scrollToTop={scrollToTop}
-          alt="product image"
-          src="https://images.unsplash.com/photo-1543364038-840000a90245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=701&q=80"
-          tagline="New citrus range"
-        />
-        <NewProductCard
-          scrollToTop={scrollToTop}
-          alt="product image"
-          src="https://images.unsplash.com/photo-1543363950-73924e68be98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80"
-          tagline="NEW Plastic Free"
-        />
-      </div>
+      <div className="new-range">
+      <h1 className="new-range-title">New Arrival</h1>
+        <h2 className="new-range-subtitle">Check out our latest range</h2>
+        </div>
+      <div className="product-icon">{products}</div>
+
     </div>
   );
 };
