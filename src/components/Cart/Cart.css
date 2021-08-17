@@ -17,3 +17,13 @@
     border: none;
     margin-top: 10px;
 }
+
+.subtotal-heading {
+    font-weight: var(--fw-regular)
+}
+
+.subtotal-price {
+    font-weight: var(--fw-bold);
+    font-style: normal;
+
+}

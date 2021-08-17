@@ -4,7 +4,6 @@ import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
 import "./ProductIcons.css";
 import data from '../../data/data'
 import Search from "../Search/Search";
-import NewProductCard from "../NewProductCard/NewProductCard";
 
 const ProductIcons = ({ scrollToTop,children }) => {
   const [filter, setFilter] = useState("");
@@ -17,14 +16,7 @@ const ProductIcons = ({ scrollToTop,children }) => {
     return (
       <ProductIcon
         scrollToTop={scrollToTop}
-        id={product.id}
-        key={i}
-        src={product.images[0].url}
-        description={product.description}
-        alt={product.name}
-        name={product.name}
-        tagline={product.tagline}
-        price={`£${product.price}`}
+        product={product} key={i}
       />
 
     );

@@ -40,7 +40,6 @@ function App() {
         <Route path="/cart" exact>
           <Cart/>
         </Route>
-
         <Route path="*">
           <div>I dont exist :(</div>
         </Route>

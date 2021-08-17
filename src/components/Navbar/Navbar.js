@@ -6,9 +6,21 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
 import "./Navbar.css";
 
-const Navbar = ({ scrollToTop, quantityInBasket }) => {
-  const [click, setClick] = useState(false);
+import {connect } from 'react-redux'
 
+const Navbar = ({ scrollToTop, quantityInBasket, cart }) => {
+  const [click, setClick] = useState(false);
+  const [cartCount, setCartCount] = useState(0)
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    });
+
+    setCartCount(count);
+  }, [cart, cartCount]);
+  
   const handleClick = () => {
     setClick(!click);
     scrollToTop();
@@ -49,7 +61,7 @@ const Navbar = ({ scrollToTop, quantityInBasket }) => {
         <li className="nav-item">
           <Link to="/cart" onClick={handleClick} className="nav-links">
             <AiOutlineShoppingCart className="nav-icon" />
-            Cart ( {quantityInBasket} )
+            Cart ( {cartCount} )
           </Link>
         </li>
       </ul>
@@ -58,4 +70,10 @@ const Navbar = ({ scrollToTop, quantityInBasket }) => {
   );
 };
 
-export default Navbar;
+
+const mapStateToProps = state => {
+  return {
+    cart: state.shop.cart
+  }
+}
+export default connect(mapStateToProps)(Navbar);

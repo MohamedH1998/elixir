@@ -2,23 +2,19 @@ import React, { useState, useEffect } from "react";
 import { TiTick } from "react-icons/ti";
 import { useParams } from "react-router-dom";
 import {connect} from 'react-redux'
-
-
-
-import data from '../../data/data'
-// import data from "../../data/data";
-
 import "./Product.css";
 import ProductIcon from "../ProductIcon/ProductIcon";
 
-const Product = ({selectItem, quantityInBasket, setQuantityInBasket}) => {
+import {addToCart} from '../../redux/Shopping/shoppingActions'
 
-  const [quantity, setQuantity] = useState(0);
+const Product = ({products, addToCart}) => {
 
+  const [quantity, setQuantity] = useState(0)
   const [imageLoaded, setImageLoaded] = useState(false);
   const params = useParams();
   const i = params.id;
-
+  const selectedProductArray = products.filter(prod => prod.id == i)
+  const selectedProduct = selectedProductArray[0]
 
 
   const handleIncrease = () => {
@@ -35,15 +31,10 @@ const Product = ({selectItem, quantityInBasket, setQuantityInBasket}) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    if (quantity !== 0) {
-        const vibe = selectItem(data[i].id, quantity)
-        setQuantityInBasket(vibe.payload.amount)
-        console.log(quantityInBasket)
-
-   }
+    addToCart(selectedProduct.id, quantity)
     setQuantity(0)
-
   };
+
 
   const scrollToTop = () => window.scrollTo(0, 0);
 
@@ -55,40 +46,40 @@ const Product = ({selectItem, quantityInBasket, setQuantityInBasket}) => {
           <div className="holder">
             <div className="preview-imgs">
               <img
-                alt={data[i].images.tagline}
+                alt={selectedProduct.images.tagline}
                 className={`smooth-image preview-img image-${
                   imageLoaded ? "visible" : "hidden"
                 }`}
                 onLoad={() => setImageLoaded(true)}
-                src={data[i].images[0].url}
+                src={selectedProduct.images[0].url}
               />
               <img
-                alt={data[i].images.tagline}
+                alt={selectedProduct.images.tagline}
                 className={`smooth-image preview-img image-${
                   imageLoaded ? "visible" : "hidden"
                 }`}
                 onLoad={() => setImageLoaded(true)}
-                src={data[i].images[1].url}
+                src={selectedProduct.images[1].url}
               />
             </div>
             <div className="cal-8">
               <img
-                alt={data[i].images.tagline}
+                alt={selectedProduct.images.tagline}
                 className={`smooth-image main-img image-${
                   imageLoaded ? "visible" : "hidden"
                 }`}
                 onLoad={() => setImageLoaded(true)}
-                src={data[i].images[2].url}
+                src={selectedProduct.images[2].url}
               />
             </div>
           </div>
         </div>
         <div className="product-info-container">
           <div className="product-info">
-            <h1 className="product-name">{data[i].name}</h1>
-            <h2 className="product-price">{`£${data[i].price}`}</h2>
+            <h1 className="product-name">{selectedProduct.name}</h1>
+            <h2 className="product-price">{`£${selectedProduct.price}`}</h2>
             <hr className="product-hr"></hr>
-            <p className="product-description">{data[i].description}</p>
+            <p className="product-description">{selectedProduct.description}</p>
             <div className="product-detail">
               <ul>
                 <li>
@@ -159,39 +150,34 @@ const Product = ({selectItem, quantityInBasket, setQuantityInBasket}) => {
       </div>
       <h2 className="other-products">Other products you may like:</h2>
       <div className="product-icon">
+        
         <ProductIcon
           scrollToTop={scrollToTop}
-          id={data[4].id}
-          key={data[4].id}
-          src={data[4].images[0].url}
-          alt={data[4].name}
-          name={data[4].name}
-          tagline={data[4].tagline}
-          price={`£${data[4].price}`}
+          product={products[4]}
         />
-        <ProductIcon
+                <ProductIcon
           scrollToTop={scrollToTop}
-          id={data[3].id}
-          key={data[3].id}
-          src={data[3].images[0].url}
-          alt={data[3].name}
-          name={data[3].name}
-          tagline={data[3].tagline}
-          price={`£${data[4].price}`}
+          product={products[3]}
         />
-        <ProductIcon
+                <ProductIcon
           scrollToTop={scrollToTop}
-          id={data[7].id}
-          key={data[7].id}
-          src={data[7].images[0].url}
-          alt={data[7].name}
-          name={data[7].name}
-          tagline={data[7].tagline}
-          price={`£${data[4].price}`}
+          product={products[7]}
         />
+
       </div>
     </div>
   );
 };
 
-export default Product
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: (id, amount) => dispatch(addToCart(id, amount))
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    products: state.shop.products,
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

@@ -1,7 +1,7 @@
 import React from "react";
 import "./RenderSmoothImage.css";
 
-function RenderSmoothImage({ src, alt }) {
+function RenderSmoothImage({ src, alt, className }) {
   const [imageLoaded, setImageLoaded] = React.useState(false);
 
   return (
@@ -9,7 +9,7 @@ function RenderSmoothImage({ src, alt }) {
       <img
         src={src}
         alt={alt}
-        className={`smooth-image image-${imageLoaded ? "visible " : "hidden"}`}
+        className={`smooth-image image-${imageLoaded ? "visible " : "hidden"} ${className && className}`}
         onLoad={() => setImageLoaded(true)}
       />
       {!imageLoaded && (
