@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# React Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a react ecommerce site with full functionality (until checkout). This application uses, functional components, google OAuth for sign-in/sign-out, and state management through react hooks, custom hooks, and also Redux.  
+
+# Live Demo 
+https://elixir-commerce.netlify.app/
 
 ## Available Scripts
 
