@@ -1,0 +1,8 @@
+.google-sign-in {
+    font-style: normal;
+    cursor: pointer;
+}
+.google-sign-out {
+    padding: 10px 20px;
+    border: 1px solid #c2c1c1;
+}

@@ -5,6 +5,8 @@ const INITIAL_STATE = {
   products: products,
   cart: [],
   currentItem: null,
+  isSignedIn: null,
+  userId: null
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
@@ -52,20 +54,10 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
-    case actionTypes.ADJUST_ITEM_QTY:
-      return {
-        ...state,
-        cart: state.cart.map((item) =>
-          item.id === action.payload.id
-            ? { ...item, qty: +action.payload.qty }
-            : item
-        ),
-      };
-    case actionTypes.LOAD_CURRENT_ITEM:
-      return {
-        ...state,
-        currentItem: action.payload,
-      };
+    case actionTypes.SIGN_IN:
+      return {...state, isSignedIn: true, userId: action.payload};
+    case actionTypes.SIGN_OUT:
+      return {...state, isSignedIn: false, userId: null}
     default:
       return state;
   }

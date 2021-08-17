@@ -1,0 +1,18 @@
+.error-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.error-image {
+    width: 100%;
+    max-width: 500px;
+}
+.error-header {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 10px;
+}
+ 

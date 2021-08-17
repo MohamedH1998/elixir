@@ -1,0 +1,12 @@
+.collapsible-container {
+    padding: 20px;
+    min-height: 70vh;
+}
+
+.my-account-header {
+    padding: 20px 0px;
+}
+
+.sign-out-container {
+    margin: 30px 0px;;
+}

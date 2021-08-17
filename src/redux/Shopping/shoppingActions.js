@@ -28,19 +28,15 @@ export const removeFomCart = (itemID) => {
     }
 }
 
-export const adjustQty = (itemID, value) => {
+export const signIn = (userId) => {
     return {
-        type: actionTypes.ADJUST_ITEM_QTY,
-        payload: {
-            id: itemID,
-            qty: value
-        }
+        type: actionTypes.SIGN_IN,
+        payload: userId
     }
 }
 
-export const loadCurrentItem = (item) => {
+export const signOut = () => {
     return {
-        type: actionTypes.LOAD_CURRENT_ITEM,
-        payload: item
+        type: actionTypes.SIGN_OUT,
     }
 }

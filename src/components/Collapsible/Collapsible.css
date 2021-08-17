@@ -1,0 +1,83 @@
+.collapsible {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.collapsible .toggle {
+    background-color: #ececec;
+    border: 1px solid #c2c1c1;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+    color: #242424;
+    display: flex;
+    padding: 16px 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.collapsible .content {
+    border: 1px solid #c2c1c1;
+    padding: 20px
+}
+
+.collapsible .content-parent {
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: height ease 0.3s;
+    background-color: var(--clr-bg);
+}
+
+.collapsible-id {
+    font-style: normal;
+    padding-right: 20px;
+}
+.account-info-header-container {
+    padding-bottom: 20px;
+}
+.account-info-header {
+    font-weight: var(--fw-regular);
+    padding: 10px;
+
+}
+
+
+.account-info-form {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    width: auto;
+    padding: 10px 10px;
+}
+
+.account-form-label {
+    padding: 15px 0px;
+}
+
+.account-form-input {
+    padding: 9px 40px;
+    border: 1px solid #d8d7d7;
+    background-color: #fff;
+}
+
+.account-info-separator {
+    width: 70%;
+    margin: auto;
+}
+
+.account-info-btn {
+    padding: 10px 20px;
+    margin: 20px 0px;
+    font-size: var(--fs-p);
+    border: none;
+    background-color: var(--clr-light);
+    color: #fff;
+    border-radius: 4px;
+}

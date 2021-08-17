@@ -5,12 +5,17 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscAccount } from "react-icons/vsc";
 import "./Navbar.css";
+import GoogleAuth from '../GoogleAuth'
+import useWindowDimensions from "../hooks";
 
 import {connect } from 'react-redux'
 
-const Navbar = ({ scrollToTop, quantityInBasket, cart }) => {
+const Navbar = ({ scrollToTop, isSignedIn, cart }) => {
+
   const [click, setClick] = useState(false);
   const [cartCount, setCartCount] = useState(0)
+  const {height, width} = useWindowDimensions()
+
 
   useEffect(() => {
     let count = 0;
@@ -21,11 +26,14 @@ const Navbar = ({ scrollToTop, quantityInBasket, cart }) => {
     setCartCount(count);
   }, [cart, cartCount]);
   
-  const handleClick = () => {
-    setClick(!click);
-    scrollToTop();
-  };
 
+
+  const handleClick = () => {
+    if (width <= 750) {
+      setClick(!click);
+      scrollToTop();
+  };
+  }
   useEffect(()=> {
     click ? document.body.style.overflow = 'hidden' :  document.body.style.overflow = 'unset';
   }, [click])
@@ -42,6 +50,7 @@ const Navbar = ({ scrollToTop, quantityInBasket, cart }) => {
       </div>
       <div className="nav-items-container">
       <ul className={click ? "nav-menu active" : "nav-menu"}>
+        
         <li className="nav-item">
           <Link to="/" onClick={handleClick} className="nav-links">
             Home
@@ -53,10 +62,13 @@ const Navbar = ({ scrollToTop, quantityInBasket, cart }) => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/" onClick={handleClick} className="nav-links">
+          {isSignedIn ? (
+          <Link to="/account" onClick={handleClick} className="nav-links">
             <VscAccount className="nav-icon" />
             My Account
-          </Link>
+          </Link>) : (
+            <i className="nav-links"><GoogleAuth/></i>
+          )}
         </li>
         <li className="nav-item">
           <Link to="/cart" onClick={handleClick} className="nav-links">
@@ -73,7 +85,8 @@ const Navbar = ({ scrollToTop, quantityInBasket, cart }) => {
 
 const mapStateToProps = state => {
   return {
-    cart: state.shop.cart
+    cart: state.shop.cart,
+    isSignedIn: state.shop.isSignedIn
   }
 }
 export default connect(mapStateToProps)(Navbar);

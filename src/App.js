@@ -9,14 +9,14 @@ import ProductIcons from "./components/ProductIcons/ProductIcons";
 import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 
 import Support from "./components/Support";
- 
 import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import Search from "./components/Search/Search";
-function App() {
-  const [quantityInBasket, setQuantityInBasket] = useState(0);
-  const [subTotal, setSubTotal] = useState(0)
+import Collapsibles from "./components/Collapsibles";
+import { connect } from 'react-redux'
+import ErrorPage from "./components/ErrorPage";
 
+function App({isSignedIn}) {
   const scrollToTop = () => window.scrollTo(0, 0);
   return (
     <Router>
@@ -35,13 +35,16 @@ function App() {
         </Route>
         <Route path="/products/:id" exact>
           <Breadcrumbs />
-          <Product quantityInBasket={quantityInBasket} setQuantityInBasket={setQuantityInBasket}/>
+          <Product/>
         </Route>
         <Route path="/cart" exact>
           <Cart/>
         </Route>
+        <Route path="/account" exact>
+        {isSignedIn === false ? <ErrorPage/> : <Collapsibles/> }
+        </Route>
         <Route path="*">
-          <div>I dont exist :(</div>
+          <ErrorPage/>
         </Route>
       </Switch>
       <Footer />
@@ -49,4 +52,9 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isSignedIn: state.shop.isSignedIn
+  }
+}
+export default connect(mapStateToProps)(App);
