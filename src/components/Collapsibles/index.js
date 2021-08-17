@@ -6,6 +6,11 @@ import GoogleAuth from '../GoogleAuth';
 
 import './Collapsibles.css'
 const Collapsibles = () => {
+
+    const handleClick = e => {
+        e.preventDefault()
+
+    }
     return (
         <div className="collapsible-container">
             <h2 className="my-account-header"><VscAccount className="nav-icon" />My Account</h2>
@@ -22,7 +27,7 @@ const Collapsibles = () => {
                    <input type="text" className="account-form-input" name="lName"/>
                    <label htmlFor="email" className="account-form-label">Email Address</label>
                    <input type="email" className="account-form-input" name="email"/>
-                   <button className="account-info-btn">Continue</button>
+                   <button onClick={(e) => handleClick(e)} className="account-info-btn">Continue</button>
                </form>
         </Collapsible>
         <Collapsible id="2" label="Change your Password">
@@ -36,7 +41,7 @@ const Collapsibles = () => {
                    <input type="password" className="account-form-input" name="password"/>
                    <label htmlFor="confirm-password" className="account-form-label">Confirm Password</label>
                    <input type="password" className="account-form-input" name="confirm-password"/>
-                   <button className="account-info-btn">Continue</button>
+                   <button onClick={(e) => handleClick(e)} className="account-info-btn">Continue</button>
                </form>
         </Collapsible>
         <div className="sign-out-container">
