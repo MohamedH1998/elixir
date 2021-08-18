@@ -13,7 +13,7 @@ module.exports = [
         url: "https://images.unsplash.com/photo-1543363136-9b070a911153?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       },
     ],
-    price: 3.99,
+    price: 2.99,
     description:
       "Our hardest-core green juice. Verde is all the green you need in the morning. For the early birds and the night owls, this sugar free concoction will get you ready for action.",
     tagline: "Our hardest-core green juice.",
@@ -52,7 +52,7 @@ module.exports = [
         url: "https://images.unsplash.com/photo-1524638067-feba7e8ed70f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
       },
     ],
-    price: 3.99,
+    price: 2.55,
     description:
       "A smooth orange juice made using carefully selected sun-ripened oranges for a sweet, natural flavour. From concentrate. Five organic oranges per bottle. Best served chilled. Source of Vitamin C. 1 of your 5 a day.",
     tagline: "Perfect orange juice, yes, perfect",
@@ -90,7 +90,7 @@ module.exports = [
         url: "https://images.unsplash.com/photo-1551300739-125a008c9e85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=664&q=80",
       },
     ],
-    price: 3.99,
+    price: 4.99,
     description:
       "Our organic kiwi juice is made with 100% fresh fruit, no preservatives or conservatives, and will leave you feeling refreshed and energised.",
     tagline: "Our organic kiwi juice is made with 100% fresh fruit.",
@@ -109,7 +109,7 @@ module.exports = [
         url: "https://images.unsplash.com/photo-1551561440-515f674d502e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=665&q=80",
       },
     ],
-    price: 3.99,
+    price: 2.99,
     description:
       "Juicy organic mangos bring tropical flavour and a burst of creamy goodness. No nasty chemicals and preservatives, just wholesome nourishment.",
     tagline: "Juicy organic mangos bring tropical flavour.",
@@ -128,7 +128,7 @@ module.exports = [
         url: "https://images.unsplash.com/photo-1543363363-1fe620fe3d4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
       },
     ],
-    price: 3.99,
+    price: 3.55,
     description:
       "Handmade juices from freshly squeezed fruits. 100% Fruit; Nothing added and nothing taken away. No sugar added.",
     tagline: "Handmade juice from freshly fruits.",
@@ -147,7 +147,7 @@ module.exports = [
         url: "https://images.unsplash.com/photo-1525904220310-64ef12c1429b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80",
       },
     ],
-    price: 3.99,
+    price: 4.99,
     description:
       "Our organic smooth Viola is simply pressed, so more of its goodness reaches your glass. Our grapes come from carefully selected organic vineyards and are crushed immediately after harvest to capture all their intense sweetness.",
     tagline: "Our finest grapes, carefully selected organic vineyards.",
