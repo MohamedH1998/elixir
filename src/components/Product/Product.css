@@ -19,6 +19,9 @@
   object-fit: cover;
 }
 
+.preview-img-1 {
+  padding-bottom: 10px;
+}
 .a {
   margin-bottom: 7%;
 }

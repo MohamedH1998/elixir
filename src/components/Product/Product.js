@@ -6,6 +6,7 @@ import "./Product.css";
 import ProductIcon from "../ProductIcon/ProductIcon";
 
 import {addToCart} from '../../redux/Shopping/shoppingActions'
+import RenderSmoothImage from "../RenderSmoothImage/RenderSmoothImage";
 
 const Product = ({products, addToCart}) => {
 
@@ -15,7 +16,6 @@ const Product = ({products, addToCart}) => {
   const i = params.id;
   const selectedProductArray = products.filter(prod => prod.id == i)
   const selectedProduct = selectedProductArray[0]
-
 
   const handleIncrease = () => {
     if (quantity <= 10) {
@@ -45,31 +45,16 @@ const Product = ({products, addToCart}) => {
         <div className="product-imgs">
           <div className="holder">
             <div className="preview-imgs">
-              <img
+              <RenderSmoothImage className="preview-img preview-img-1" src={selectedProduct.images[0].url}
                 alt={selectedProduct.images.tagline}
-                className={`smooth-image preview-img image-${
-                  imageLoaded ? "visible" : "hidden"
-                }`}
-                onLoad={() => setImageLoaded(true)}
-                src={selectedProduct.images[0].url}
               />
-              <img
+              <RenderSmoothImage className="preview-img" src={selectedProduct.images[1].url}
                 alt={selectedProduct.images.tagline}
-                className={`smooth-image preview-img image-${
-                  imageLoaded ? "visible" : "hidden"
-                }`}
-                onLoad={() => setImageLoaded(true)}
-                src={selectedProduct.images[1].url}
               />
             </div>
             <div className="cal-8">
-              <img
+            <RenderSmoothImage className="main-img" src={selectedProduct.images[2].url}
                 alt={selectedProduct.images.tagline}
-                className={`smooth-image main-img image-${
-                  imageLoaded ? "visible" : "hidden"
-                }`}
-                onLoad={() => setImageLoaded(true)}
-                src={selectedProduct.images[2].url}
               />
             </div>
           </div>

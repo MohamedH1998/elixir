@@ -77,23 +77,23 @@ module.exports = [
     tagline: "Carrot, Apple, Ginger, and Mint- what more do you want?",
   },
   {
-    id: "4",
-    name: "Mirtillo",
+    id: "7",
+    name: "Smeraldo",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1565585947268-dc5194ae29de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+        url: "https://images.unsplash.com/photo-1615385365748-9b46b7ae446e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
       },
       {
-        url: "https://images.unsplash.com/photo-1572559451259-f53324c573aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+        url: "https://images.unsplash.com/photo-1572565638061-ecff52429d86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
       },
       {
-        url: "https://images.unsplash.com/photo-1543363363-1fe620fe3d4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1551300739-125a008c9e85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=664&q=80",
       },
     ],
     price: 3.99,
     description:
-      "Handmade juices from freshly squeezed fruits. 100% Fruit; Nothing added and nothing taken away. No sugar added.",
-    tagline: "Handmade juice from freshly fruits.",
+      "Our organic kiwi juice is made with 100% fresh fruit, no preservatives or conservatives, and will leave you feeling refreshed and energised.",
+    tagline: "Our organic kiwi juice is made with 100% fresh fruit.",
   },
   {
     id: "5",
@@ -115,6 +115,25 @@ module.exports = [
     tagline: "Juicy organic mangos bring tropical flavour.",
   },
   {
+    id: "4",
+    name: "Mirtillo",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1565585947268-dc5194ae29de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1572559451259-f53324c573aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1543363363-1fe620fe3d4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      },
+    ],
+    price: 3.99,
+    description:
+      "Handmade juices from freshly squeezed fruits. 100% Fruit; Nothing added and nothing taken away. No sugar added.",
+    tagline: "Handmade juice from freshly fruits.",
+  },
+  {
     id: "6",
     name: "Viola",
     images: [
@@ -132,24 +151,5 @@ module.exports = [
     description:
       "Our organic smooth Viola is simply pressed, so more of its goodness reaches your glass. Our grapes come from carefully selected organic vineyards and are crushed immediately after harvest to capture all their intense sweetness.",
     tagline: "Our finest grapes, carefully selected organic vineyards.",
-  },
-  {
-    id: "7",
-    name: "Smeraldo",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1615385365748-9b46b7ae446e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-      },
-      {
-        url: "https://images.unsplash.com/photo-1572565638061-ecff52429d86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-      },
-      {
-        url: "https://images.unsplash.com/photo-1551300739-125a008c9e85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=664&q=80",
-      },
-    ],
-    price: 3.99,
-    description:
-      "Our organic kiwi juice is made with 100% fresh fruit, no preservatives or conservatives, and will leave you feeling refreshed and energised.",
-    tagline: "Our organic kiwi juice is made with 100% fresh fruit.",
-  },
+  }
 ];
