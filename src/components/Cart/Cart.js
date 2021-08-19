@@ -27,9 +27,10 @@ const Cart = ({cart}) => {
         <div className="cart-container">
             <h3 className="subtotal-heading">Subtotal ( {totalItems} items ):<i className="subtotal-price"> £ {totalPrice.toFixed(2)}</i></h3>
             <button className="checkout-btn">Proceed to checkout</button>
+            <div className="cart-items-container">
 
             { cart.length ? cartItems : <h2 className="empty-cart">Nothing here :( </h2>}
-            
+                </div>
         </div>
     )
 }

@@ -14,7 +14,7 @@ const CartItem = ({item, addToCart, takeawayFromCart, removeFomCart, products}) 
     const handleIncrease = () => {
         if (quantity <= 10) {
         const newQuantity = quantity + 1 
-
+        setQuantity(newQuantity)
         addToCart(item.id, 1)
 
 
@@ -40,7 +40,7 @@ const CartItem = ({item, addToCart, takeawayFromCart, removeFomCart, products}) 
             </Link>
         </div>
         <div className="cart-item-text">
-            <p className="product-details name">{item.name}</p>
+            <p className="cart-details name">{item.name}</p>
             <p className="cart-item-tagline">{item.tagline}</p>
             <div className="container cart-item-qty">
             <div>
